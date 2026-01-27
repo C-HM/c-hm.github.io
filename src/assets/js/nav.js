@@ -60,8 +60,32 @@ document.addEventListener("DOMContentLoaded", function () {
         let activeClass = "";
         let fullLink = prefix + item.link;
 
-        // Simple active check
-        if (path.endsWith(item.link)) {
+        // Robust active check
+        // item.link is relative to root (e.g., "index.html", "resto/index.html")
+        // path is the full pathname (e.g., "/src/index.html", "/src/resto/index.html")
+
+        let pathName = path.replace(/\\/g, '/'); // Ensure forward slashes
+
+        // Check for Root "Accueil"
+        if (item.link === "index.html") {
+            if (pathName.endsWith("/src/index.html") || pathName.endsWith("/LaResidence/index.html") || pathName === "/index.html" || pathName === "/") {
+                // Ensure we are NOT in a subfolder with index.html (like resto/index.html)
+                // The easiest way distinguishing root index from others is context
+                // But since 'path' is just the filename in some servers, we must be careful.
+                // Strategy: Check if the path contains any other known top-level folders? 
+                // Better strategy: Check if the path ends with specific string AND the length matches reasonable root expectations OR explicit exclusion.
+
+                // if path ends with "index.html" AND does NOT end with "resto/index.html" etc.
+                const subfolders = ["resto/index.html", "chambres/index.html", "eco/index.html", "contact/index.html"];
+                const isSubfolder = subfolders.some(sub => pathName.endsWith(sub));
+
+                if (!isSubfolder) {
+                    activeClass = "active";
+                }
+            }
+        }
+        // Check for other specific pages
+        else if (pathName.endsWith(item.link)) {
             activeClass = "active";
         }
 
