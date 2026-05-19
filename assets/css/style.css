@@ -113,10 +113,11 @@ a {
 .main-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
     padding: 2rem;
+    padding-top: 4rem;
     margin-top: 80px;
     flex: 1;
     width: 100%;
