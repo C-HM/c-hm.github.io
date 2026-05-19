@@ -37,17 +37,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuItems = [
         { name: "Accueil", link: "index.html", exact: true },
         {
-            name: "Resto Spa",
-            link: "resto/index.html",
+            name: "La Résidence",
+            link: "residence/index.html",
             dropdown: [
-                { name: "Resto", link: "resto/restaurant.html" },
+                { name: "Nos Logements", link: "chambres/index.html" },
+                { name: "Restaurant", link: "resto/restaurant.html" },
                 { name: "Bar", link: "resto/bar.html" },
-                { name: "The Tea Room", link: "resto/tearoom.html" }
+                { name: "Nos Prestations", link: "prestations/index.html" },
+                { name: "Tarifs", link: "chambres/tarifs.html" },
+                { name: "Galerie", link: "galerie/index.html" },
+                { name: "Témoignages", link: "temoignages/index.html" }
             ]
         },
-        { name: "Nos Chambres", link: "chambres/index.html" },
-        { name: "Tarifs", link: "chambres/tarifs.html" },
-        { name: "Eco", link: "eco/index.html" },
+        { name: "Écologie", link: "eco/index.html" },
+        { name: "Presse", link: "presse/index.html" },
         { name: "Contact", link: "contact/index.html", class: "contact-link" }
     ];
 
