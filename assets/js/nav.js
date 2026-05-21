@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             name: "La Résidence",
             link: "residence/index.html",
             dropdown: [
-                { name: "Nos Logements", link: "chambres/index.html" },
+                { name: "Nos Chambres", link: "chambres/index.html" },
                 { name: "Restaurant", link: "resto/restaurant.html" },
                 { name: "Bar", link: "resto/bar.html" },
                 { name: "Nos Prestations", link: "prestations/index.html" },
